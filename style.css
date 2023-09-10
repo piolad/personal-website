@@ -1,10 +1,16 @@
 body {
     background-color: #1D1D1D;
+    background-image: url("imgs/bg3.png") ;
+    background-repeat: repeat-y;
+    background-size: cover;
 }
 
 #navbar {
     color: #BFBEBE;
     font-family: sans-serif;
+    /* width: 100%;
+    height: 10%; */
+    /* background-color: rgb(0, 0, 0); */
 }
 
 #navbar {
@@ -16,7 +22,10 @@ body {
     text-decoration: none;
 }
 
-
+.currentPage{
+    font-weight: 900;
+    /* color: #FFFFFF; */
+}
 
 #navigation>*>a:visited {
     color: #BFBEBE;
@@ -24,6 +33,9 @@ body {
 
 #navigation>*>a:hover {
     text-decoration: underline;
+}
+#navigation>*>a {
+    color: #BFBEBE;
 }
 
 #navbar>* {
@@ -120,8 +132,8 @@ body {
 }
 
 #main>p,
-#main>details {
-    position: relative;
+#main {
+    position: absolute;
     left: 80px;
 }
 
@@ -199,3 +211,76 @@ body {
     top: 150px;
     /* margin: 0px; */
 }
+
+#faceimg{
+    position: absolute;
+    /* top: 150px; */
+    top: 13%;
+    left: 85%;
+    height: 23%;
+    /*add rounded corners: */
+    border-radius: 50%;
+    /* transform: translateX(-50%) translateY(-50%); */
+    /* text-align: center; */
+    border: 0.45vh solid #23683b;
+}
+/* #faceimgwrapper{
+    content: "";
+    width: 11px;
+    background-color: #FFFFFF;
+} */
+
+#faceimg:hover{
+    border: 0.45vh solid #FFFFFF;
+    animation: change-imgborder 0.5s ease-in-out alternate;
+}
+@keyframes change-imgborder {
+    0% {
+        border: 0.45vh solid #23683b;
+    }
+    100% {
+        border: 0.45vh solid #FFFFFF;
+    }
+    
+}
+
+#headline > h2::after{
+    content: "";
+    width: 20px;
+    height: 3px;
+    background-color: #FFFFFF;
+    display: inline-block;
+    margin-left: 4px;
+    /* bottom: -10px; */
+    /* left: 0; */
+    animation: cursor-blink 1.25s steps(120) infinite;
+}
+
+@keyframes cursor-blink {
+    0% {
+      opacity: 0;
+    }
+    20% {
+        opacity: 1;
+      }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+  #navbar::after{
+    content: "";
+    width: 100%;
+    height: 60px; /* Todo: change*/
+    background-color: #00000036;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    display: inline-block;
+    /* bottom: -10px; */
+    /* left: 0; */
+  }

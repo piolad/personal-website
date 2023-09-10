@@ -1,5 +1,5 @@
 text_whoIam = null
-phrasesWhoIam = [ "tech enthusiast", "game creator", "machine learning enthusiast", "Computer Science student","programmer"]
+phrasesWhoIam = ["programmer", "tech enthusiast", "game creator", "machine learning enthusiast", "Computer Science student"]
 
 //string.includes polyfill - for older browser users
 if (!String.prototype.includes) {
@@ -17,71 +17,54 @@ if (!String.prototype.includes) {
     };
   }
 
+  delay = 200
+  
+  var i = 1;
+  function whoiamLoop(){
 
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-}
-
-window.onload = () => {
-
-    text_whoIam = document.getElementById("headline").getElementsByTagName("span")[0]
-
-
-
-    
-    undefindeErrorBugfix()
-
-
-    loop_txt()
-
-}
-
-function undefindeErrorBugfix(){
-    setInterval(function(){
-        if (text_whoIam.innerHTML.includes("undefined")){
-            text_whoIam.innerHTML = phrasesWhoIam[0]
-        }
-    },7000)
-}
-
-
-async function loop_txt(){
-    await delay(5000)
-
-    txt_counter = 0
-    while(true){
-        txt = phrasesWhoIam[txt_counter]
-        prev_txt_len = text_whoIam.innerHTML.length
-        remove_letters(text_whoIam, 150)
-        await delay(prev_txt_len*150+150)
-        
-        add_letters(text_whoIam, txt, 150)
-        await delay(txt.length*300+5000)
-        txt_counter+=1
-        txt_counter= txt_counter%phrasesWhoIam.length
+      if(!done){
+        changeWhoamiText(text_whoIam, phrasesWhoIam[i], delay)
+        i = (i+1)%phrasesWhoIam.length;
+        console.log("I: " + i)
+      }
+      setTimeout(whoiamLoop, 7000)
     }
+    
+window.onload = () => {
+    text_whoIam = document.getElementById("headline").getElementsByTagName("span")[0]     
+
+
+
+    setTimeout(whoiamLoop, 7000)
 }
 
+done = false
+function changeWhoamiText(txtElem, newTxt, delay){
 
-function remove_letters(toBeRemoved, ms){
-    var timer = setInterval(function(){
-        var length = toBeRemoved.innerHTML.length;
+    if(done) return
+    done = true
 
-        if(length==0) clearInterval(timer)
+    function removal_loop(){
+        if(txtElem.innerHTML.length > 0){
+            txtElem.innerHTML = txtElem.innerHTML.substring(0, txtElem.innerHTML.length-1)
+            setTimeout(removal_loop, delay)
 
-        toBeRemoved.innerHTML = toBeRemoved.innerHTML.substring(0, toBeRemoved.innerHTML.length-1)
-    },ms)
+        } else {
+            if(txtElem.innerHTML.length == 0)
+                adding_loop();
+        }
+
+    }
+    
+    function adding_loop(){
+        if(txtElem.innerHTML.length < newTxt.length){
+            txtElem.innerHTML += newTxt[txtElem.innerHTML.length]
+            setTimeout(adding_loop, delay)
+        } else {
+            done = false
+        }
+
+    }
+    
+    removal_loop()
 }
-
-function add_letters(toBeIncreased, phrase, ms){
-    var timer = setInterval(function(){
-        var length = toBeIncreased.innerHTML.length;
-
-
-        if(length==phrase.length) clearInterval(timer)
-        else if(phrase[length]= undefined) clearInterval(timer)
-        else toBeIncreased.innerHTML += phrase[length]
-    },ms)
-}
-
-
