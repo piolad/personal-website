@@ -35,7 +35,7 @@ window.onload = () => {
 
 
 
-    setTimeout(whoiamLoop, 7000)
+    setTimeout(whoiamLoop, 3000)
 }
 
 done = false
