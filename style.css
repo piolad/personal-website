@@ -1,16 +1,23 @@
+
+
 body {
     background-color: #1D1D1D;
     background-image: url("imgs/bg3.png") ;
     background-repeat: repeat-y;
     background-size: cover;
+
+    margin: 0;
+    
 }
 
 #navbar {
     color: #BFBEBE;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
     /* width: 100%;
     height: 10%; */
     /* background-color: rgb(0, 0, 0); */
+    
 }
 
 #navbar {
@@ -24,6 +31,11 @@ body {
 
 .currentPage{
     font-weight: 900;
+    color: #FFFFFF;
+
+
+
+
     /* color: #FFFFFF; */
 }
 
@@ -70,7 +82,7 @@ body {
 
 #curve-shape {
     position: absolute;
-    margin-left: -8px;
+    /* margin-left: -8px; */
     bottom: -120px;
     width: 100%;
 
@@ -108,13 +120,32 @@ body {
     bottom: -40px;
     position: absolute;
 
+    z-index: 10;
+
     width: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%);
     text-align: center;
+
+    animation: bounce 1s infinite;
+    animation-play-state: running;
 }
 
-#main {
+#scroll-text:hover {
+    animation-play-state: paused;
+  }
+
+@keyframes bounce {
+    0%, 100% {
+       transform:  translateX(-50%) translateY(0); 
+    }
+    50% {
+       transform:  translateX(-50%) translateY(-7px);
+    }
+  }
+
+
+/* #main {
 
     color: #FFFFFF;
     font-family: sans-serif;
@@ -128,14 +159,29 @@ body {
 
     /* left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    text-align: center; */
+    text-align: center; 
 }
 
 #main>p,
 #main {
     position: absolute;
     left: 80px;
+} */
+
+main{
+    width: 100%;
+    background-color: #36AC5F;
+    margin: 0%;
+    position: absolute;
+    top: 110vh;
+    padding: 0px;
+    
 }
+
+main >* {
+    margin-left: 30px;
+}
+
 
 /* #main > details > summary >meter{
 
@@ -209,20 +255,64 @@ body {
     margin-left: -8px;
     padding-right: 8px;
     top: 150px;
+    
     /* margin: 0px; */
 }
 
-#faceimg{
+#faceimg-wrapper{
+    max-height: 10vh;
     position: absolute;
     /* top: 150px; */
-    top: 13%;
-    left: 85%;
-    height: 23%;
-    /*add rounded corners: */
+    /*make it stick to right */
+
+    transition: max-height 0.9s linear;
+    
+    top: 10vh;
+    right: 6vw;
+}
+
+
+#faceimg-wrapper:hover{
+    max-height: 150%;
+    background-color: white;
+    /*animation: change-imgborder 0.3s ease-in-out alternate;*/
+    /* animation:  max-height 5s ease-in-out alternate; */
+
+    transition: max-height 0.9s linear;
+    border-top-right-radius: 10vh;
+    border-top-left-radius: 10vh;
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    /* border-top-left-radius: 50%; */
+    
+}
+
+#faceimg{
+    position: relative;
+
+    height: 20vh;
+
     border-radius: 50%;
     /* transform: translateX(-50%) translateY(-50%); */
     /* text-align: center; */
     border: 0.45vh solid #23683b;
+}
+
+#faceimg-info {
+
+    margin-top: 1vh;
+
+    position: relative;
+    left: 10px;
+    font-family: sans-serif;
+    word-wrap: break-word;
+    
+}
+#faceimg-info > * {
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 /* #faceimgwrapper{
     content: "";
@@ -230,9 +320,9 @@ body {
     background-color: #FFFFFF;
 } */
 
-#faceimg:hover{
+#faceimg:hover {
     border: 0.45vh solid #FFFFFF;
-    animation: change-imgborder 0.5s ease-in-out alternate;
+    /* animation: change-imgborder 0.3s ease-in-out alternate; */
 }
 @keyframes change-imgborder {
     0% {
@@ -280,7 +370,7 @@ body {
     background-color: #00000052;
     top: 0px;
     left: 0px;
-    position: absolute;
+    position: fixed;
     display: inline-block;
     /* bottom: -10px; */
     /* left: 0; */
