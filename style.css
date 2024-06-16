@@ -257,8 +257,7 @@ main >* {
     margin-left: -8px;
     padding-right: 8px;
     top: 150px;
-
-    z-index: 0;
+    z-index: -10;
     
     /* margin: 0px; */
 }
@@ -379,6 +378,14 @@ main >* {
     /* bottom: -10px; */
     /* left: 0; */
   }
+
+
+  #cat1{
+    /*make it stick to right*/
+    float: right;
+    
+    /* right: 0; */
+}
 
   .xpand-langs {
     width: 55%;
