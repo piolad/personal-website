@@ -33,9 +33,6 @@ body {
     font-weight: 900;
     color: #FFFFFF;
 
-
-
-
     /* color: #FFFFFF; */
 }
 
@@ -175,11 +172,15 @@ main{
     position: absolute;
     top: 110vh;
     padding: 0px;
+
+    z-index: 10;
     
 }
 
 main >* {
     margin-left: 30px;
+    color: #eeecec;
+    font-family: sans-serif;
 }
 
 
@@ -199,6 +200,7 @@ main >* {
 }
 
 .scale-wrapper {
+    /* width: 75%; */
     width: 75%;
     display: inline;
 }
@@ -238,7 +240,7 @@ main >* {
     width: 10%;
     display: table-cell;
     white-space: nowrap;
-    font-size: 0.8em;
+    font-size: 1em;
     position: relative;
     top: -5px;
 }
@@ -255,6 +257,8 @@ main >* {
     margin-left: -8px;
     padding-right: 8px;
     top: 150px;
+
+    z-index: 0;
     
     /* margin: 0px; */
 }
@@ -306,7 +310,7 @@ main >* {
 
     position: relative;
     left: 10px;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
     word-wrap: break-word;
     
 }
@@ -374,4 +378,17 @@ main >* {
     display: inline-block;
     /* bottom: -10px; */
     /* left: 0; */
+  }
+
+  .xpand-langs {
+    width: 55%;
+    margin-bottom: 55px;
+  }
+  .xpand-langs > summary > span{
+    font-size: 2.2vh;
+  }
+
+  .my-languages{
+    /*snap to right */
+    
   }

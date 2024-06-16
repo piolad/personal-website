@@ -12,6 +12,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/arrow.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+    </style>
 </head>
 
 <body>
@@ -57,14 +61,16 @@
 
 
     <div id="scroll-text">
-
+        <div class="arrow"></div>
         <p>SCROLL DOWN FOR MORE</p>
-        <div id="bg">&nbsp</div>
-        <div id="main">
+    </div>
+
+        <main>
+            <div class="my-languages">
             <h2>Language:</h2>
             <p>Learning languages is my passion and </p>
 
-            <details>
+            <details class="xpand-langs" open>
                 <!-- <summary>English: C1<meter max="100" low="25" high="75" optimum="65" value="95"></meter> </summary> -->
                 <summary>
                     <span>English: C1</span>
@@ -84,14 +90,14 @@
                     </div>
                     <!-- ------------------------------- -->
                 </summary>
-                <hr>
+                <!-- <hr> -->
                 <p>I have been learing english for over 15 years and my skills are confirmed by many certifications. I
                     am able to communicate proficiently in any situation, without any problem.</p>
                 <b>My certifications:</b> TOEFL Certificate, SAT Reading and Writing Scores
                 <hr>
             </details>
 
-            <details>
+            <details class="xpand-langs" open>
                 <summary>
 
                     <span>German: B1</span>
@@ -111,7 +117,7 @@
                     </div>
                     <!-- ------------------------------- -->
                 </summary>
-                <hr>
+                <!-- <hr> -->
                 <p>I am able to communicate in german on a intermediate level.
                     I have been learining German for about 7 years now.
                     Additionally I have worked and lived in germany.</p>
@@ -120,15 +126,15 @@
 
             <p>French: A2</p>
             <p>Polish: native</p>
-
         </div>
-    </div>
+        </main>
+    
 
 
 
 
 
-    <!-- <script src="" async defer></script> -->
+    <!-- <script src="" async defer></script> 
 </body>
 
 </html>
