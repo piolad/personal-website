@@ -161,7 +161,7 @@ body {
 } */
 
 main {
-  width: 100%;
+  width: 100vw;
   background-color: #36ac5f;
   margin: 0%;
   position: absolute;
@@ -208,6 +208,10 @@ main > * {
 }
 #main a:visited {
   color: #ffffff;
+}
+
+#main p {
+    font-size: 2.1vh;
 }
 
 /* #main > details > summary >meter{
@@ -401,8 +405,11 @@ main > * {
 #cat1 {
   /*make it stick to right*/
   float: right;
-
-  /* right: 0; */
+  display: none;
+    position: absolute;
+  margin-right: 6vw;
+  margin-bottom: 18vh;
+  
 }
 
 .xpand-langs {
@@ -415,4 +422,17 @@ main > * {
 
 .my-languages {
   /*snap to right */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  background-color: #319453;
+  color: #ffffff;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 10px;
+ z-index: 99;
+ 
 }
