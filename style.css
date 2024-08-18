@@ -1,6 +1,9 @@
 body {
   background-color: #1d1d1d;
-  background-image: url("imgs/bg3.png");
+  background-image: url("imgs/bg3-transformed.png");
+  /* scale down */
+  background-size: 100%;
+  background-attachment: fixed;
   background-repeat: repeat-y;
   background-size: cover;
 }
