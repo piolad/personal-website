@@ -51,7 +51,7 @@ body {
 }
 
 #navbar > hr {
-  width: 99%;
+  width: 100%;
   top: 48px;
 }
 
@@ -170,17 +170,11 @@ main > * {
 #main h1 {
   font-size: 3.5vh;
   /* font-weight: 100; */
-  margin-top: 0px;
+  margin-top: .5vh;
   margin-bottom: 5.5vh;
 
 }
 
-
-
-/* animated underline on hoover */
-/* #main  a:hover {
-    text-decoration: underline;
-} */
 #main a:hover::before {
   transform: scaleX(1);
 }
@@ -334,6 +328,8 @@ main > * {
 #faceimg-info > * {
   margin-top: 3px;
   margin-bottom: 3px;
+  width: 20vh;
+  font-size: 1.5vh;
 }
 /* #faceimgwrapper{
     content: "";
